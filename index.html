@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shourya Gupta | Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+
+  <!-- Theme Toggle Button -->
+  <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+    <i class="fas fa-moon"></i>
+  </button>
+
+  <!-- Scroll to Top Button -->
+  <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <span class="logo-bracket">&lt;</span>
+        <span class="logo-text">SG</span>
+        <span class="logo-bracket">/&gt;</span>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#education" class="nav-link">Education</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero" id="hero">
+    <div class="hero-background">
+      <div class="gradient-orb orb-1"></div>
+      <div class="gradient-orb orb-2"></div>
+      <div class="gradient-orb orb-3"></div>
+    </div>
+    <div class="hero-content" data-aos="fade-up">
+      <div class="profile-pic-wrapper">
+        <img src="shourya.jpg" alt="Shourya Gupta" class="profile-pic" />
+        <div class="profile-ring"></div>
+      </div>
+      <div class="hero-text">
+        <p class="hero-greeting">Hello, I'm</p>
+        <h1 id="typing" class="hero-title"></h1>
+        <p class="hero-subtitle">
+          <span class="subtitle-item"><i class="fas fa-graduation-cap"></i> B.Tech Student</span>
+          <span class="subtitle-divider">•</span>
+          <span class="subtitle-item"><i class="fas fa-code"></i> Tech Enthusiast</span>
+          <span class="subtitle-divider">•</span>
+          <span class="subtitle-item"><i class="fas fa-university"></i> COER University</span>
+        </p>
+        <div class="hero-buttons">
+          <a href="cv.shourya.pdf" target="_blank" class="btn btn-primary">
+            <i class="fas fa-file-alt"></i> View Resume
+          </a>
+          <a href="#contact" class="btn btn-secondary">
+            <i class="fas fa-paper-plane"></i> Get in Touch
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <div class="mouse">
+        <div class="wheel"></div>
+      </div>
+      <p>Scroll Down</p>
+    </div>
+  </header>
+
+  <!-- About Section -->
+  <section id="about" class="section about-section">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-label">Get to Know Me</span>
+        <h2 class="section-title">About</h2>
+      </div>
+      <div class="about-content" data-aos="fade-up" data-aos-delay="100">
+        <div class="glass-card about-card">
+          <div class="card-icon">
+            <i class="fas fa-user-circle"></i>
+          </div>
+          <p>Hi, I'm Shourya, a 4th-year engineering student passionate about web development and technology. I'm currently learning and building websites, constantly exploring new tools and frameworks to sharpen my skills. With a strong interest in creating user-friendly digital experiences, I'm working towards becoming a full-stack developer and eventually launching impactful tech projects of my own.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section id="experience" class="section experience-section">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-label">My Journey</span>
+        <h2 class="section-title">Work Experience</h2>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item" data-aos="fade-right" data-aos-delay="100">
+          <div class="timeline-dot"></div>
+          <div class="glass-card timeline-card">
+            <div class="timeline-header">
+              <div class="timeline-left">
+                <div class="company-logo">
+                  <img src="inc.png" alt="Incture Logo" />
+                </div>
+                <div class="timeline-details">
+                  <h3 class="company-name">INCTURE</h3>
+                  <p class="role-title">Python Intern</p>
+                </div>
+              </div>
+              <span class="timeline-date">
+                <i class="fas fa-calendar-alt"></i> Feb 2024 – Apr 2024
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education Section -->
+  <section id="education" class="section education-section">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-label">Academic Background</span>
+        <h2 class="section-title">Education</h2>
+      </div>
+      <div class="education-grid">
+        <div class="glass-card education-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="education-icon">
+            <i class="fas fa-university"></i>
+          </div>
+          <div class="education-logo">
+            <img src="coer.jpg.jpg" alt="COER Logo" />
+          </div>
+          <div class="education-content">
+            <h3 class="education-title">College Of Engineering Roorkee</h3>
+            <p class="education-subtitle">Uttarakhand Technical University</p>
+            <span class="education-date">
+              <i class="fas fa-calendar"></i> 2022–2026
+            </span>
+          </div>
+        </div>
+        <div class="glass-card education-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="education-icon">
+            <i class="fas fa-school"></i>
+          </div>
+          <div class="education-logo">
+            <img src="kv.jpg" alt="KV Logo" />
+          </div>
+          <div class="education-content">
+            <h3 class="education-title">Kendriya Vidyalaya ONGC</h3>
+            <p class="education-subtitle">Intermediate (CBSE)</p>
+            <span class="education-date">
+              <i class="fas fa-calendar"></i> 2022
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="section projects-section">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-label">What I've Built</span>
+        <h2 class="section-title">Projects</h2>
+      </div>
+      <div class="projects-grid">
+        <div class="glass-card project-card" data-aos="zoom-in" data-aos-delay="100">
+          <div class="project-icon">
+            <i class="fas fa-laptop-code"></i>
+          </div>
+          <h3 class="project-title">
+            <a href="https://your-portfolio-link.com" target="_blank" rel="noopener noreferrer">
+              Personal Portfolio Website
+              <i class="fas fa-external-link-alt"></i>
+            </a>
+          </h3>
+          <p class="project-description">A fully responsive personal portfolio built with HTML, CSS, and JavaScript.</p>
+          <div class="project-tags">
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">JavaScript</span>
+          </div>
+        </div>
+        <div class="glass-card project-card" data-aos="zoom-in" data-aos-delay="200">
+          <div class="project-icon">
+            <i class="fas fa-brain"></i>
+          </div>
+          <h3 class="project-title">
+            <a href="https://github.com/maximanoob01/fake-profile-detection" target="_blank" rel="noopener noreferrer">
+              Fake Profile Detection
+              <i class="fas fa-external-link-alt"></i>
+            </a>
+          </h3>
+          <p class="project-description">Built a 96% accurate Insta follower predictor using Python, ANN, and ML libraries with data cleaning, scaling, and evaluation.</p>
+          <div class="project-tags">
+            <span class="tag">Python</span>
+            <span class="tag">Machine Learning</span>
+            <span class="tag">ANN</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="section skills-section">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-label">My Toolkit</span>
+        <h2 class="section-title">Skills</h2>
+      </div>
+      <div class="skills-grid" data-aos="fade-up" data-aos-delay="100">
+        <div class="skill-item">
+          <div class="skill-icon">
+            <i class="fab fa-react"></i>
+          </div>
+          <span class="skill-name">REACT.JS</span>
+        </div>
+        <div class="skill-item">
+          <div class="skill-icon">
+            <i class="fab fa-html5"></i>
+          </div>
+          <span class="skill-name">HTML & CSS</span>
+        </div>
+        <div class="skill-item">
+          <div class="skill-icon">
+            <i class="fab fa-js"></i>
+          </div>
+          <span class="skill-name">JavaScript</span>
+        </div>
+        <div class="skill-item">
+          <div class="skill-icon">
+            <i class="fas fa-database"></i>
+          </div>
+          <span class="skill-name">SQL</span>
+        </div>
+        <div class="skill-item">
+          <div class="skill-icon">
+            <i class="fab fa-python"></i>
+          </div>
+          <span class="skill-name">PYTHON</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section contact-section">
+    <div class="container">
+      <div class="contact-content" data-aos="fade-up">
+        <span class="contact-badge">Let's Connect</span>
+        <h2 class="contact-title">Reach Out</h2>
+        <p class="contact-text">
+          Got a question or just want to say hi? Feel free to message me 
+          <a href="https://www.linkedin.com/in/shourya-gupta-8a8876250/" target="_blank">on LinkedIn</a>. 
+          I'm always happy to connect and chat about tech, startups, or anything interesting. Just no spam please!
+        </p>
+        <div class="social-links">
+          <a href="https://github.com/maximanoob01" target="_blank" class="social-link" data-aos="zoom-in" data-aos-delay="100">
+            <i class="fab fa-github"></i>
+            <span>GitHub</span>
+          </a>
+          <a href="https://www.linkedin.com/in/shourya-gupta-8a8876250/" target="_blank" class="social-link" data-aos="zoom-in" data-aos-delay="200">
+            <i class="fab fa-linkedin"></i>
+            <span>LinkedIn</span>
+          </a>
+          <a href="mailto:gshourya665@gmail.com" class="social-link" data-aos="zoom-in" data-aos-delay="300">
+            <i class="fas fa-envelope"></i>
+            <span>Email</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <p>&copy; 2025 Shourya Gupta. All rights reserved.</p>
+      <p class="footer-tagline">Designed & Built with <i class="fas fa-heart"></i></p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
