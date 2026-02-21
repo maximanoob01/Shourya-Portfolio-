@@ -251,86 +251,193 @@
     /* ════════════════ TABLET ════════════════ */
     @media(max-width:1024px){
       .projects-grid{grid-template-columns:repeat(2,1fr)}
-      .hero-char{width:clamp(240px,35vw,400px);right:2%}
+      .hero-char{width:clamp(240px,35vw,420px);right:2%}
       .hero-tagline{top:90px;right:2rem;max-width:210px}
     }
 
     /* ════════════════ MOBILE ════════════════ */
     @media(max-width:768px){
-      /* nav */
+
+      /* ── NAV ── */
       nav{padding:0 1.25rem}
       .nav-links{
         display:none;flex-direction:column;gap:0;
         position:fixed;top:0;left:0;right:0;bottom:0;
-        background:rgba(8,8,8,0.97);backdrop-filter:blur(20px);
-        padding:90px 1.75rem 2rem;z-index:9;
+        background:rgba(8,8,8,0.98);backdrop-filter:blur(20px);
+        padding:88px 1.75rem 2rem;z-index:9;
         justify-content:flex-start;align-items:flex-start;
       }
       .nav-links.open{display:flex}
       .nav-links li{width:100%;border-bottom:1px solid var(--border)}
-      .nav-links a{display:block;padding:0.9rem 0;font-size:1rem!important;letter-spacing:0.06em;color:var(--white)!important}
+      .nav-links a{display:block;padding:0.9rem 0;font-size:1.05rem!important;letter-spacing:0.05em;color:var(--white)!important}
       .nav-links li:last-child{border:none;margin-top:1.25rem}
-      .nav-cta{display:inline-block!important;padding:0.7rem 1.4rem!important;font-size:0.78rem!important}
+      .nav-cta{display:inline-block!important;padding:0.7rem 1.5rem!important;font-size:0.78rem!important}
       .nav-toggle{display:flex}
 
-      /* sections */
-      .section{padding:4.5rem 1.25rem}
+      /* ── SECTIONS ── */
+      .section{padding:4rem 1.25rem}
 
-      /* hero */
-      .hero-inner{padding:88px 1.25rem 5.5rem}
-      .hero-tagline{display:none} /* hidden on mobile to avoid overlap */
-      .hero-name{font-size:clamp(2.8rem,12vw,4.5rem)}
+      /* ══════════════════════════════════════
+         HERO — rebuilt for mobile
+         Text fills top half cleanly.
+         Character anchors to bottom half.
+         Both look intentional and sharp.
+      ══════════════════════════════════════ */
 
-      /* char fades to very subtle watermark on mobile */
-      .hero-char{
-        width:85%;right:50%;left:50%;
-        transform:translateX(-50%)!important;
-        bottom:0;
+      /* Full screen, no clipping */
+      .hero{
+        min-height:100svh;
+        display:block;
+        position:relative;
+        overflow:hidden;
       }
-      .hero-char img{opacity:0.2;width:100%}
 
-      .hero-skills-bar{left:1.25rem;right:1.25rem;gap:1.25rem;padding-top:1rem;bottom:2rem}
+      /* Shorten the bottom fade so character feet stay visible */
+      .hero::after{height:100px}
+
+      /* Character: centered, fully opaque, anchored to bottom.
+         The orange bg already matches hero-bg so it merges naturally. */
+      .hero-char{
+        position:absolute;
+        bottom:0;
+        left:50%;
+        right:auto;
+        transform:translateX(-50%)!important;
+        width:82vw;
+        max-width:320px;
+        z-index:2;
+      }
+      .hero-char img{
+        width:100%;
+        opacity:1;
+        filter:brightness(1.02) contrast(1.03);
+      }
+
+      /* Text block sits in the upper portion of the screen */
+      .hero-inner{
+        position:relative;
+        z-index:6;
+        width:100%;
+        padding:100px 1.4rem 0;
+        min-height:0;
+        display:flex;
+        flex-direction:column;
+        justify-content:flex-start;
+        gap:0;
+      }
+
+      /* Hide tagline — no room on mobile */
+      .hero-tagline{display:none}
+
+      .hero-greeting{
+        font-size:0.68rem;
+        letter-spacing:0.16em;
+        margin-bottom:0.55rem;
+      }
+
+      .hero-name{
+        font-size:clamp(2.9rem,13.5vw,4.5rem);
+        line-height:0.9;
+      }
+
+      .hero-role{
+        margin-top:0.9rem;
+        gap:0.45rem;
+      }
+      .role-pill{
+        font-size:0.6rem;
+        padding:0.35rem 0.7rem;
+        letter-spacing:0.06em;
+      }
+
+      .hero-btns{
+        margin-top:1.1rem;
+        gap:0.6rem;
+        flex-wrap:wrap;
+      }
+      .btn{padding:0.62rem 1.2rem;font-size:0.67rem}
+
+      /* Skills bar: pinned to bottom edge, scrolls horizontally if needed */
+      .hero-skills-bar{
+        position:absolute;
+        bottom:1.25rem;
+        left:1.25rem;
+        right:1.25rem;
+        z-index:7;
+        display:flex;
+        flex-wrap:nowrap;
+        gap:1.1rem;
+        padding-top:0.8rem;
+        border-top:1px solid rgba(255,255,255,0.12);
+        overflow-x:auto;
+        -webkit-overflow-scrolling:touch;
+        scrollbar-width:none;
+      }
+      .hero-skills-bar::-webkit-scrollbar{display:none}
+      .skill-tag{flex-shrink:0}
+      .skill-tag .label{font-size:0.67rem}
+      .skill-tag .num{font-size:0.56rem}
+
+      /* Hide desktop scroll hint */
       .scroll-hint{display:none}
 
-      /* about */
+      /* ── ABOUT ── */
       .about-layout{grid-template-columns:1fr;gap:2rem}
-      .about-right{max-width:340px;margin:0 auto;width:100%}
+      .about-right{max-width:300px;margin:0 auto;width:100%}
+      .about-stats{gap:1.5rem}
+      .stat-num{font-size:1.9rem}
 
-      /* education */
-      .education-grid{grid-template-columns:1fr;gap:1.25rem}
+      /* ── EXPERIENCE ── */
+      .timeline-header{flex-direction:column;align-items:flex-start;gap:0.6rem}
+      .timeline-date{align-self:flex-start}
 
-      /* projects */
-      .projects-grid{grid-template-columns:1fr;gap:1.25rem}
+      /* ── EDUCATION ── */
+      .education-grid{grid-template-columns:1fr;gap:1rem}
+      .education-card{padding:1.5rem}
 
-      /* skills — 2 per row */
-      .skills-grid{gap:0.85rem}
+      /* ── PROJECTS ── */
+      .projects-grid{grid-template-columns:1fr;gap:1rem}
+      .project-card{padding:1.4rem}
+
+      /* ── SKILLS: 2 per row ── */
+      .skills-grid{gap:0.8rem}
       .skill-item{
         flex:none;
-        width:calc(50% - 0.425rem);
+        width:calc(50% - 0.4rem);
         min-width:unset;
-        padding:1.4rem 1rem;
+        padding:1.35rem 0.9rem;
       }
 
-      /* contact */
-      .contact-content-wrap{grid-template-columns:1fr;padding:5.5rem 1.25rem 3.5rem;gap:2.5rem;min-height:auto}
+      /* ── CONTACT ── */
+      .contact-section{min-height:auto}
+      .contact-content-wrap{
+        grid-template-columns:1fr;
+        padding:5rem 1.25rem 3rem;
+        gap:2rem;
+        min-height:auto;
+      }
+      .contact-video-wrap::after{background:rgba(8,8,8,0.87)}
       .contact-video-inner{width:100%;height:100%;aspect-ratio:unset}
       .contact-video-inner video{width:100%;height:100%;object-fit:cover}
-      .contact-title{font-size:clamp(2.4rem,11vw,3.8rem)}
-      .contact-text{max-width:100%}
+      .contact-title{font-size:clamp(2.3rem,10vw,3.5rem)}
+      .contact-text{max-width:100%;font-size:0.88rem}
       .form-row{grid-template-columns:1fr}
-      .contact-form-wrap{padding:1.5rem 1.1rem}
+      .contact-form-wrap{padding:1.4rem 1.1rem}
+      .contact-photo img{width:50px;height:50px}
 
-      /* footer */
+      /* ── FOOTER ── */
       footer{flex-direction:column;gap:0.5rem;text-align:center;padding:1.5rem}
     }
 
+    /* ── SMALL PHONES ── */
     @media(max-width:420px){
       .hero-name{font-size:clamp(2.5rem,13vw,3.2rem)}
-      .btn{padding:0.65rem 1.2rem;font-size:0.68rem}
-      .hero-btns{gap:0.6rem}
-      .hero-skills-bar{gap:0.9rem}
-      .skill-item{padding:1.2rem 0.85rem}
-      .section-title{font-size:2rem}
+      .hero-char{width:90vw;max-width:290px}
+      .hero-btns{flex-direction:column;align-items:flex-start}
+      .btn{font-size:0.65rem;padding:0.6rem 1.1rem}
+      .hero-skills-bar{gap:0.8rem}
+      .skill-item{padding:1.2rem 0.8rem}
+      .section-title{font-size:1.9rem}
     }
   </style>
 </head>
@@ -373,7 +480,7 @@
         <span class="role-pill"><i class="fas fa-university"></i> B.Tech @ COER</span>
       </div>
       <div class="hero-btns">
-        <a href="images/ new new.pdf" target="_blank" class="btn btn-primary"><i class="fas fa-file-alt"></i> View Resume</a>
+        <a href="resume new new.pdf" target="_blank" class="btn btn-primary"><i class="fas fa-file-alt"></i> View Resume</a>
         <a href="#contact" class="btn btn-secondary"><i class="fas fa-paper-plane"></i> Get in Touch</a>
       </div>
     </div>
@@ -669,4 +776,3 @@
   </script>
 </body>
 </html>
-
